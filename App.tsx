@@ -1,7 +1,7 @@
 import './App.css'
 import { Examples } from '../src/examples/Examples'
 import { Nav } from '../src/docs/Nav'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import {HashRouter as Router, Route, Routes } from 'react-router-dom'
 import { Overview } from '../src/docs/Overview'
 import React from 'react'
 
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <BrowserRouter>
+      <Router>
         <div className="App">
           <header className="App-header">
             <h1 className="App-title">React Modal Demo</h1>
@@ -41,7 +41,7 @@ function App() {
             <Route path="/examples/" element={<Examples />} />
           </Routes>
         </div>
-      </BrowserRouter>
+      </Router>
     </React.Fragment>
   )
 }
