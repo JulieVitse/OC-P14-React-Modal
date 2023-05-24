@@ -55,9 +55,9 @@
 To install, you can use [npm](https://npmjs.org/), [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/installation).
 
 ```
-$ npm install julie-v-react-modal
-$ yarn add julie-v-react-modal
-$ pnpm add julie-v-react-modal
+$ npm install julie-react-ts-modal
+$ yarn add julie-react-ts-modal
+$ pnpm add julie-react-ts-modal
  ```
 
 
@@ -85,14 +85,16 @@ The documentation contains the description of all the props available for the mo
 Here is a simple example of the modal being used in an app.
 
 ```Javascript
-import { Modal, useModal } from 'julie-v-react-modal'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Modal, useModal } from 'julie-react-ts-modal'
+import 'julie-react-ts-modal/dist/index.css'
 
 function App() {
   // if you only need one modal, use this hook
-  const { isOpen, openModal, closeModal } = useModal()
-  
+  const { isOpen, openModal, closeModal, handleEscClose } = useModal()
+  handleEscClose() // remove this if you don't want to be able to close the modal with the escape key
+   
   // if you need more than one modal, you need to use different names for the hooks.
   // for example, if you have a confirmation modal and a modal with a form, you can do this:
   const {

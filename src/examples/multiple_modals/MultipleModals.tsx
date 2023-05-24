@@ -1,5 +1,5 @@
 import { TestComponent } from '../../TestComponent/TestComponent'
-import { Modal } from '../../lib/components/Modal/Modal'
+import Modal from '../../lib/components/Modal/Modal'
 import { useModal } from '../../lib/components/Modal/useModal'
 
 export function MultipleModals() {
@@ -8,11 +8,13 @@ export function MultipleModals() {
     isOpen: isOpenConfirm,
     openModal: openModalConfirm,
     closeModal: closeModalConfirm,
+    handleEscClose: handleEscCloseConfirm,
   } = useModal()
   const {
     isOpen: isOpenForm,
     openModal: openModalForm,
     closeModal: closeModalForm,
+    handleEscClose: handleEscCloseForm,
   } = useModal()
 
   return (
@@ -28,12 +30,14 @@ export function MultipleModals() {
       <Modal
         isOpen={isOpenConfirm}
         closeModal={closeModalConfirm}
+        handleEscClose={handleEscCloseConfirm}
         textContent='I am a confirm modal'
       />
 
       <Modal
         isOpen={isOpenForm}
         closeModal={closeModalForm}
+        handleEscClose={handleEscCloseForm}
         ChildComponent={<TestComponent name={'Form component'} />}
       />
     </>

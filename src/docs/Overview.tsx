@@ -1,7 +1,11 @@
+import { useEffect } from 'react'
 import './Overview.scss'
 import { PropDesc } from './PropDesc'
 
 export function Overview() {
+  useEffect(() => {
+    document.title = 'React Modal - Overview'
+  }, [])
   const htmlString = "'<div>Insert HTML</div>'"
   return (
     <div className="overview">
@@ -17,8 +21,8 @@ export function Overview() {
           <a href="https://yarnpkg.com/">yarn</a>.
         </p>
         <div className="codeblock">
-          <code>$ npm install julie-v-react-modal</code>
-          <code>$ yarn add julie-v-react-modal</code>
+          <code>$ npm install julie-react-ts-modal</code>
+          <code>$ yarn add julie-react-ts-modal</code>
         </div>
       </section>
 
@@ -41,11 +45,11 @@ export function Overview() {
               <span className="sp-i">import</span> &#123;{' '}
               <span className="sp-b">Modal, useModal</span> &#125;{' '}
               <span className="sp-i">from </span>
-              <span className="sp-g">'julie-v-react-modal'</span>
+              <span className="sp-g">'julie-react-ts-modal'</span>
             </p>
             <p>function App() &#123;</p>
             <p className="ind-1">
-              const &#123; isOpen, openModal, closeModal &#125; = useModal()
+              const &#123; isOpen, openModal, closeModal, handleEscClose &#125; = useModal()
             </p>
             <p className="ind-1">
               const onAfterCloseFunction = () =&gt; &#123; console.log('Modal
@@ -82,9 +86,9 @@ export function Overview() {
               description="/* String (default: 'Close') containing the text displayed in the close button */"
             />
             <PropDesc
-              name="escToClose"
-              value="true"
-              description="/* Boolean (default: true) indicating if the modal can be closed by pressing the escape key*/"
+              name="handleEscClose"
+              value="handleEscClose"
+              description="/* Function closing the modal by pressing the escape key*/"
             />
             <PropDesc
               name="clickOverlayClose"

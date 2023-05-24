@@ -2,8 +2,12 @@ import './Examples.scss'
 import { MultipleModals } from './multiple_modals/MultipleModals'
 import { AllPropsModal } from './all_props_modal/AllPropsModal'
 import { SimpleUsage } from './simple_usage/SimpleUsage'
+import { useEffect } from 'react'
 
 export function Examples() {
+  useEffect(() => {
+    document.title = 'React Modal - Examples'
+  }, [])
     return (
       <section className="examples">
         <h2 className="examples__title">
@@ -36,12 +40,13 @@ export function Examples() {
                 <p>function App() &#123;</p>
                 <p className="ind-1">
                   const &#123; isOpen: isOpenConfirm, openModal:
-                  openModalConfirm, closeModal: closeModalConfirm &#125; =
-                  useModal()
+                  openModalConfirm, closeModal: closeModalConfirm,
+                  handleEscClose: handleEscCloseConfirm &#125; = useModal()
                 </p>
                 <p className="ind-1">
                   const &#123; isOpen: isOpenForm, openModal: openModalForm,
-                  closeModal: closeModalForm &#125; = useModal()
+                  closeModal: closeModalForm, handleEscClose: handleEscCloseForm
+                  &#125; = useModal()
                 </p>
                 <br />
                 <p className="ind-1">return (</p>
@@ -57,12 +62,18 @@ export function Examples() {
                 <p className="ind-3">
                   closeModal= &#123;closeModalConfirm&#125;
                 </p>
+                <p className="ind-3">
+                  handleEscClose= &#123;handleEscCloseConfirm&#125;
+                </p>
                 <p className="ind-3">textContent="I am a confirm modal"</p>
                 <p className="ind-2">/&gt;</p>
 
                 <p className="ind-2">&lt;Modal</p>
                 <p className="ind-3">isOpen= &#123;isOpenForm&#125;</p>
                 <p className="ind-3">closeModal= &#123;closeModalForm&#125;</p>
+                <p className="ind-3">
+                  handleEscClose= &#123;handleEscCloseForm&#125;
+                </p>
                 <p className="ind-3">
                   ChildComponent=&#123;&lt;Form name=&#123;"Form
                   component"&#125; /&gt;&#125;
@@ -96,7 +107,7 @@ export function Examples() {
                 <p className="ind-1">isOpen=&#123;isOpen&#125;</p>
                 <p className="ind-1">closeModal=&#123;closeModal&#125;</p>
                 <p className="ind-1">modalVisible="visible"</p>
-                <p className="ind-1">escToClose=&#123;false&#125;</p>
+                <p className="ind-1">handleEscClose=&#123;handleEscClose&#125;</p>
                 <p className="ind-1">clickOverlayClose=&#123;false&#125;</p>
                 <p className="ind-1">showClose=&#123;true&#125;</p>
                 <p className="ind-1">closeText="Exit"</p>

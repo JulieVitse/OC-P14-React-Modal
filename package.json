@@ -7,7 +7,6 @@
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "dist/index.js",
   "files": [
     "dist",
     "README.md"
@@ -22,7 +21,7 @@
     "@types/react-dom": "^18.0.0",
     "node-sass": "^8.0.0",
     "react-router-dom": "^6.10.0",
-    "typescript": "^5.0.4",
+    "typescript": "^4.4.5",
     "web-vitals": "^2.1.0"
   },
   "repository": {
@@ -35,7 +34,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-doc": "react-scripts build",
-    "build-types": "tsc --emitDeclarationOnly"
+    "build-types": "tsc"
   },
   "eslintConfig": {
     "extends": [
@@ -59,6 +58,7 @@
     "babel-cli": "^6.26.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "typescript": "^4.4.5"
   }
 }

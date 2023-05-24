@@ -1,9 +1,9 @@
-import { Modal } from '../../lib/components/Modal/Modal'
+import Modal from '../../lib/components/Modal/Modal'
 import { useModal } from '../../lib/components/Modal/useModal'
 
 export function AllPropsModal() {
   // if you only need one modal you can use this hook
-  const { isOpen, openModal, closeModal } = useModal()
+  const { isOpen, openModal, closeModal, handleEscClose } = useModal()
 
   function onAfterCloseFunction() {
     alert('Modal has been closed')
@@ -21,7 +21,7 @@ export function AllPropsModal() {
         isOpen={isOpen}
         closeModal={closeModal}
         modalVisible="visible"
-        escToClose={false}
+        handleEscClose={handleEscClose}
         clickOverlayClose={false}
         showClose={true}
         closeText="Exit"
